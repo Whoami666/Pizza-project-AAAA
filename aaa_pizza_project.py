@@ -52,15 +52,6 @@ class Pizza:
 
     @beautifier
     def menu(self):
-        """
-        >>> menu(Pizza("Margherita", ["tomatoes", "tomato sauce", "mozzarella"], "🍟"))
-        💫💫💫💫💫💫💫💫💫💫💫💫💫💫💫
-        Pizza Margherita 🍟:
-        🥄tomatoes
-        🥄tomato sauce
-        🥄mozzarella
-        💫💫💫💫💫💫💫💫💫💫💫💫💫💫💫
-        """
 
         beautiful_string = ""
         for ingredient in self.ingredients:
@@ -102,12 +93,8 @@ def hello(count, name):
 
 
 if __name__ == '__main__':
-    import doctest
-
-    doctest.testmod()
     pizzas = [Pizza("Margherita", ["tomatoes", "tomato sauce", "mozzarella"], "🍟"),
               Pizza("Pepperoni", ["tomato sauce", "pepperoni", "mozzarella"], size="XL"),
               Pizza("Hawaiian", ["tomato sauce", "chicken", "mozzarella", "pineapples"], "🧀")]
-
     for pizza in pizzas:
         print(pizza.menu())
