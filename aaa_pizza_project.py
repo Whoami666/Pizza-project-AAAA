@@ -44,23 +44,14 @@ class Pizza:
             self.cooking_time = len(ingredients) * 2
 
     def beautifier(func):
-        def new_menu(self):
-            output = "💫💫💫💫💫💫💫💫💫💫💫💫💫💫💫\n" + func(self) + "💫💫💫💫💫💫💫💫💫💫💫💫💫💫💫\n"
-            return output
-
-        return new_menu
+      def new_menu(self):
+        functime = random.randint(2, 100) 
+        output = f"💫💫💫💫💫💫💫 {func.__name__}, only {functime} sec 💫💫💫💫\n" + func(self) + "💫💫💫💫💫💫💫💫💫💫💫💫💫💫💫💫💫💫💫\n"
+        return output
+      return new_menu
 
     @beautifier
     def menu(self):
-        """
-        >>> menu(Pizza("Margherita", ["tomatoes", "tomato sauce", "mozzarella"], "🍟"))
-        💫💫💫💫💫💫💫💫💫💫💫💫💫💫💫
-        Pizza Margherita 🍟:
-        🥄tomatoes
-        🥄tomato sauce
-        🥄mozzarella
-        💫💫💫💫💫💫💫💫💫💫💫💫💫💫💫
-        """
 
         beautiful_string = ""
         for ingredient in self.ingredients:
@@ -102,12 +93,8 @@ def hello(count, name):
 
 
 if __name__ == '__main__':
-    import doctest
-
-    doctest.testmod()
     pizzas = [Pizza("Margherita", ["tomatoes", "tomato sauce", "mozzarella"], "🍟"),
               Pizza("Pepperoni", ["tomato sauce", "pepperoni", "mozzarella"], size="XL"),
               Pizza("Hawaiian", ["tomato sauce", "chicken", "mozzarella", "pineapples"], "🧀")]
-
     for pizza in pizzas:
         print(pizza.menu())
