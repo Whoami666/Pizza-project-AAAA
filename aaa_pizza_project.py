@@ -44,11 +44,11 @@ class Pizza:
             self.cooking_time = len(ingredients) * 2
 
     def beautifier(func):
-        def new_menu(self):
-            output = "💫💫💫💫💫💫💫💫💫💫💫💫💫💫💫\n" + func(self) + "💫💫💫💫💫💫💫💫💫💫💫💫💫💫💫\n"
-            return output
-
-        return new_menu
+      def new_menu(self):
+        functime = random.randint(2, 100) 
+        output = f"💫💫💫💫💫💫💫 {func.__name__}, only {functime} sec 💫💫💫💫\n" + func(self) + "💫💫💫💫💫💫💫💫💫💫💫💫💫💫💫💫💫💫💫\n"
+        return output
+      return new_menu
 
     @beautifier
     def menu(self):
